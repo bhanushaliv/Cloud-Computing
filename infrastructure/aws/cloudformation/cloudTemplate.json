@@ -358,6 +358,10 @@
       "CodeDeployEC2ServiceRole": {
         "Type": "AWS::IAM::Role",
         "Properties": {
+	  "ManagedPolicyArns":[
+            "arn:aws:iam::aws:policy/AmazonRDSFullAccess",
+            "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+          ],
           "AssumeRolePolicyDocument": {
             "Version": "2012-10-17",
             "Statement": [{
