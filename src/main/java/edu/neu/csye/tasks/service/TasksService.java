@@ -7,6 +7,12 @@
 
 package edu.neu.csye.tasks.service;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import edu.neu.csye.tasks.dataaccess.TasksDao;
 import edu.neu.csye.tasks.endpoint.model.Task;
 import edu.neu.csye.tasks.service.model.TaskDto;
@@ -18,17 +24,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.io.*;
-
-import java.io.File;
-import java.io.IOException;
 import java.sql.Timestamp;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.PutObjectRequest;
 
 
 /**
@@ -47,7 +43,7 @@ public class TasksService {
     @Autowired
     private final TasksMapper tasksMapper;
 
-    private static String bucketName     = "csye6225-fall2017-bhanushaliv.me.csye6225.com";
+    private static String bucketName = "csye6225-fall2017-mudholkars.me.csye6225.com";
     private static Timestamp timestamp = new Timestamp(System.currentTimeMillis());
     private static String keyName        = "File" + timestamp.toString();
 
