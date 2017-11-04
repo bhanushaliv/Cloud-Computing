@@ -9,7 +9,6 @@ package edu.neu.csye.common;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -23,6 +22,6 @@ public class BusinessLogicException extends Exception {
 
     @Override
     public String getMessage() {
-        return "username already exists!";
+        return "username already exists!!";
     }
 }
